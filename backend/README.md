@@ -29,7 +29,7 @@ Projeto básico de autenticação com **Fastify, Prisma, JWT, Zod e SQLite**.
   - **/controllers**   
           - **auth.controller.js** `Lógica das rotas login e registro`
   - **server.js**      `Servidor com fastify`
-  **.env**                
+  - **.env**                
   - **package.json**
   - **pnpm-lock.yaml**
 
@@ -48,19 +48,19 @@ Projeto básico de autenticação com **Fastify, Prisma, JWT, Zod e SQLite**.
 https://github.com/artizin9/Velluto/tree/main
 
 2️⃣ Instale as dependências:
-pnpm install
+- pnpm install
 
 3️⃣ Configure as variáveis de ambiente:
 
-Crie um arquivo .env na raiz do projeto e adicione:
+`Crie um arquivo .env na raiz do projeto e adicione`
 
-PORT=3000
-DATABASE_URL="file:./dev.db"
-JWT_SECRET="seu_segredo_super_secreto"
+- PORT=3000
+- DATABASE_URL="file:./dev.db"
+- JWT_SECRET="seu_segredo_super_secreto"
 
 4️⃣ Execute as migrations do Prisma:
-pnpm prisma migrate dev --name init
+- pnpm prisma migrate dev --name init
 
 5️⃣ Inicie o servidor:
-pnpm run dev
-O servidor estará rodando em http://localhost:3000 
+- pnpm run dev
+- O servidor estará rodando em http://localhost:3000 
