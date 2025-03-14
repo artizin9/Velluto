@@ -16,7 +16,7 @@ Projeto básico de autenticação com **Fastify, Prisma, JWT, Zod e SQLite**.
 
 /prisma
    - **/schema.prisma**
-/src
+- /src
   - **/config**        
           - **env.js**       `Variáveis de ambiente`
           - **prisma.js**    `Instância do Prisma Client`
@@ -30,8 +30,8 @@ Projeto básico de autenticação com **Fastify, Prisma, JWT, Zod e SQLite**.
           - **auth.controller.js** `Lógica das rotas login e registro`
   - **server.js**      `Servidor com fastify`
   **.env**                
-  **package.json**
-  **pnpm-lock.yaml**
+  - **package.json**
+  - **pnpm-lock.yaml**
 
 
 ### **Funcionamento do Projeto**
