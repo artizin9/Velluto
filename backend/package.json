@@ -5,13 +5,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node src/server.js"
+    "dev": "node src/server.js --watch --ignore node_modules"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.6.3",
   "dependencies": {
+    "@fastify/cookie": "^11.0.2",
     "@prisma/client": "^6.5.0",
     "bcryptjs": "^3.0.2",
     "dotenv": "^16.4.7",

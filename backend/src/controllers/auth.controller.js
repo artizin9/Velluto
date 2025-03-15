@@ -8,6 +8,10 @@ export const register = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10)
 
+    const emailAlreadyExists = await prisma.user.findUnique({ where: { email } })
+
+    if (emailAlreadyExists) return res.status(400).send({ message: "Email já esta em uso" })
+
     const user = await prisma.user.create({
         data: {
             name,
@@ -17,7 +21,14 @@ export const register = async (req, res) => {
     })
 
     const token = jwt.sign({ userId: user.id}, env.JWT_SECRET, { expiresIn: "1h" })
-    res.send({ message: "Usuário criado com sucesso", userId: "Id: " + user.id, token: "Token: " + token})
+
+    res.setCookie("token", token, {
+        httpOnly: true,
+        secure: env.NODE_ENV === "production",
+        sameSite: "strict",
+    })
+
+    res.send({ message: "Usuário criado com sucesso", userId: user.id, token: token})
 }
 
 export const login = async (req, res) => {
